@@ -24,6 +24,9 @@ def grabar(nif,nombre,edad):
     if edad>=0 and longnom>=8: ##si se cumple esto, se graba al ciudadano/a en el diccionario
         ciudadanos[nif]=nombre,edad
         print("Registro Exitoso\n")
+        print("Ciudadano: ",ciudadanos[nif][0])
+        print("Edad: ",ciudadanos[nif][1])
+        print("NIF: ",nif)
         return
 
 def buscar(nif): ## KeyError
