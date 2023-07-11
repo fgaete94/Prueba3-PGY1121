@@ -1,20 +1,27 @@
 import numpy as np
+import random as rd
 
 ciudadanos={}
 
+def crearNIF():
+    num="0123456789"
+    letras="ABDCEFGHIJKLMNOPQRSTUVWXYZ"
+    g="-"
+    long=8
+    long2=1
+    long3=3
+    unir=rd.sample(num,long)+rd.sample(g,long2)+rd.sample(letras,long3)
+    NIF="".join(unir)
+    return NIF
 
 def grabar(nif,nombre,edad):
-    longnif=len(nif)
-    if longnif<0 or longnif<12 or longnif>12:
-        print("el nif ingresado no cumple con los requisitos.")
-        return
     longnom=len(nombre)
     if longnom<8:
         print("el nombre ingresado no cumple con longitud.")
         return
     if edad<0:
         print("la edad ingresada no es valida.")
-    if edad>=0 and longnom>=8 and longnif>0 and longnif==12: ##si se cumple esto, se graba al ciudadano/a en el diccionario
+    if edad>=0 and longnom>=8: ##si se cumple esto, se graba al ciudadano/a en el diccionario
         ciudadanos[nif]=nombre,edad
         print("Registro Exitoso\n")
         return

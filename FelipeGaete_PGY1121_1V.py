@@ -11,17 +11,14 @@ while True:
         opcion1=int(input())
 
         if opcion1==1:##menu para ingresar ciudadano
-            print("ingrese NIF")
-            print("por ejemplo: 99999999-RTX")
-            nif=input().upper()
             print("ingrese Nombre: ")
             nombre=input().upper()
             print("ingrese edad: ")
             try:
                 edad=int(input())
             except:
-                print("Ingresa un Valor Valido \n") 
-            fn.grabar(nif,nombre,edad) 
+                print("Ingresa un Valor Valido \n")
+            fn.grabar(fn.crearNIF(),nombre,edad) 
         elif opcion1==2:###menu para buscar ciudadanos
             print("ingrese NIF")
             nif=input().upper()
